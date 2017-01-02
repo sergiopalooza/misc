@@ -52,3 +52,29 @@ function Player() {
 function Computer() {
 	this.paddle = new Paddle(175, 10, 50, 10);
 }
+
+Player.prototype.render = function() {
+	this.paddle.render();
+}
+
+Computer.prototype.render = function() {
+	this.paddle.render();
+}
+
+function Ball(x, y){
+	this.x = x;
+	this.y = y;
+	this.x_speed = 0;
+	this.y_speed = 0;
+	this.radius = 5;
+}
+
+Ball.prototype.render = function(){
+	context.beginPath();
+	context.arc(this.x, this.y, this.radius, 2 * Math.PI, false);
+	context.fillStyle = "#00000";
+	context.fill();
+}
+
+
+
